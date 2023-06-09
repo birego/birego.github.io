@@ -1,0 +1,84 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #b2ddc48e;
+    margin: 0;
+    padding: 0;
+  }
+  .video-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .video-container video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  .container {
+    width: 400px;
+    margin: 100px auto;
+    background-color: #ffffffc5;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  /* 
+  0 : Cela indique qu'il n'y a pas de décalage horizontal pour l'ombre.
+  4px : Cela indique que l'ombre est décalée de 4 pixels vers le bas par rapport à l'élément.
+  6px : Cela spécifie le flou de l'ombre. Une valeur plus élevée donnera une ombre plus floue.
+  rgba(0, 0, 0, 0.1) : Cela définit la couleur de l'ombre. Dans ce cas, il s'agit d'une ombre noire avec une opacité de 0,1. */
+  
+  h1 {
+    font-size: 36px;
+    color: #3F51B5;
+    margin-bottom: 10px;
+  }
+  
+  img {
+    max-width: 100px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  li {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #3F51B5;
+    font-weight: bold;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin: 5px auto;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* 
+  width: 24px; et height: 24px; : Ces deux propriétés définissent la largeur et la hauteur des images des icônes à 24 pixels. Cela permet de fixer une taille spécifique pour les icônes, en garantissant leur uniformité.
+  margin: 5px auto; : Cette propriété définit la marge autour des images. Ici, 5px représente la marge en haut et en bas des icônes, tandis que auto centre les icônes horizontalement dans leur conteneur.
+  margin-right: 8px; : Cette propriété définit une marge de 8px à droite des icônes. Cela crée un espacement entre les icônes et le texte des liens adjacent.
+  vertical-align: middle; : Cette propriété aligne les icônes verticalement par rapport au texte des liens. En utilisant la valeur middle, les icônes sont alignées au milieu de la ligne de texte.
+  */
