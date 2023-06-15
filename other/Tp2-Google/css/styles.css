@@ -1,0 +1,94 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 5px ;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    text-align: center;
+}
+.nav{
+    margin-bottom: 3px;
+}
+.log{
+    position: relative;
+    width: 300px;
+  }
+.nav-bar a{
+    color: #000000b7;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+li{
+    margin-right: 15px;
+    margin-top: 3px;
+}
+
+input{
+    width: 600px;
+    height: 40px;
+    position: static;
+    margin: 10px auto;
+    border-radius: 50px;
+}
+:placeholder-shown{
+    text-align: center;
+    border-radius: 50px;
+}
+.body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sug{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    border-radius: 2px;
+    background-color: #eeeded81;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.63);
+}
+.lang{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+a{
+    text-decoration: none;
+}
+footer{
+    position: fixed;
+    height: 200px;
+    width: 100%;
+    background-color: #00000013;
+    width: max-content;
+
+}
+.grill{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 20px; 
+}
+.gauche a{
+    color: #000000b7;
+}
+.droite a{
+    color: #000000b7;
+}
+p{  
+    margin: 10px;
+    text-align: left;
+    color: #000000b7;
+}
+
