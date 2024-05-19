@@ -154,7 +154,7 @@
 
         async function fetchSearchResults(term) {
             try {
-                const response = await fetch(`http://localhost:5002/search?q=${term}`);
+                const response = await fetch(`https://kalisearch-api.onrender.com/search?q=${term}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
