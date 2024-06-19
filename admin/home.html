@@ -162,6 +162,9 @@
     position: absolute;
     inset: auto 10px 10px 10px;
 }
+#center{
+    margin-top: 50%;
+}
 @media screen and (max-width: 896px){
     .thumbnail{
         justify-content: start;
@@ -177,6 +180,9 @@
         transform: translateX(0);
         height: 400px;
     }
+    #center{
+    margin-top: 30%;
+}
 }
     </style>
 </head>
@@ -242,6 +248,8 @@
     <div class="gallery" style="margin-top: 0px;">
         <!-- list Items -->
         <div class="list">
+            
+
             <div class="item active">
                 <img src="../img/bg-img/image_1.webp">
             </div>
@@ -265,6 +273,18 @@
         </div>
         <!-- thumbnail -->
         <div class="thumbnail">
+
+            <div class="item " style="background-color: rgb(255, 255, 255);border-radius: 8px;">
+               <center id="center" >
+                <a style="">
+                <button type="button" style="background-color: red;padding: 10px;border-radius: 50%;border: 0px;">
+                    <i class="bx bx-plus" style="color: white;font-size: 40px;"></i>
+                </button>
+               </a>
+               </center>
+            </div>
+
+
             <div class="item active">
                 <img src="../img/bg-img/image_1.webp">
             </div>
