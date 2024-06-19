@@ -25,6 +25,8 @@
             font-size: 90%;
             font-weight: 100;
             color: white;
+            margin: 0; /* Correction : ajouter pour réinitialiser les marges par défaut */
+            padding: 0; /* Correction : ajouter pour réinitialiser les paddings par défaut */
         }
         .logo{
             width: 80px;
@@ -108,9 +110,13 @@
         }
         .arrows{
             position: absolute;
-            top: 30%;
-            right: 50px;
+            top: calc(50% - 20px); /* Déplace les boutons vers le haut de 20px */
             z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         .arrows button{
             background-color: #eee5;
@@ -223,6 +229,9 @@
                 transform: translateX(0);
                 height: 400px;
             }
+            .arrows{
+                top: 55%;
+            }
             
         }
     </style>
@@ -285,6 +294,10 @@
             <div class="gallery">
                 <!-- list Items -->
                 <div class="list">
+                    <div class="arrows">
+                        <button id="prev"><</button>
+                        <button id="next">></button>
+                    </div>
                     <div class="item active">
                         <img src="../img/bg-img/image_1.webp">
                     </div>
@@ -301,11 +314,6 @@
                         <img src="../img/bg-img/image_5.webp">
                     </div>
                 </div>
-                <!-- button arrows -->
-                <div class="arrows">
-                    <button id="prev"><</button>
-                    <button id="next">></button>
-                </div>
                 <!-- thumbnail -->
                 <div class="thumbnail">
                     <div class="this_div">
@@ -315,7 +323,6 @@
                             </button>
                         </center>
                     </div>
-
                     <div class="item active">
                         <img src="../img/bg-img/image_1.webp">
                     </div>
