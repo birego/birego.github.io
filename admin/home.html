@@ -25,8 +25,8 @@
             font-size: 90%;
             font-weight: 100;
             color: white;
-            margin: 0; /* Correction : ajouter pour réinitialiser les marges par défaut */
-            padding: 0; /* Correction : ajouter pour réinitialiser les paddings par défaut */
+            margin: 0;
+            padding: 0;
         }
         .logo{
             width: 80px;
@@ -110,7 +110,7 @@
         }
         .arrows{
             position: absolute;
-            top: calc(50% - 20px); /* Déplace les boutons vers le haut de 20px */
+            top: calc(50% - 20px);
             z-index: 100;
             display: flex;
             justify-content: space-between;
@@ -124,10 +124,13 @@
             font-family: monospace;
             width: 40px;
             height: 40px;
-            border-radius: 5px;
+            border-radius: 50%; /* Arrondir les boutons */
             font-size: x-large;
             color: #eee;
             transition: .5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .arrows button:hover{
             background-color: #eee;
@@ -230,7 +233,7 @@
                 height: 400px;
             }
             .arrows{
-                top: 55%;
+                top: 85%;
             }
             
         }
@@ -245,7 +248,7 @@
             </a>
 
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list" style="padding-top: 5px;">
+                <ul class="nav__list">
                     <li class="nav__item">
                         <a href="#catalogue" class="nav__link active-link">
                             <i class='bx bx-grid-alt nav__icon'></i>
