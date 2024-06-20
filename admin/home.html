@@ -180,8 +180,9 @@
         }
         #center{
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            height: 50%;
         }
         .modal {
             display: none;
@@ -202,12 +203,12 @@
             border: 1px solid #888;
             width: 80%;
             max-width: 500px;
-            border-radius: 0;
+            border-radius: 8px;
         }
         .close {
-            color: red;
+            color: #aaa;
             float: right;
-            font-size: 30px;
+            font-size: 28px;
             font-weight: bold;
         }
         .close:hover,
@@ -249,21 +250,18 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list" style="padding-top: 5px;">
                     <li class="nav__item">
-                        <a href="#caroussel" class="nav__link active-link">
-                            <i class='bx bx-reflect-vertical nav__icon'></i>
-                            <span class="nav__name">Caroussel</span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="nav__item">
-                        <a href="#catalogue" class="nav__link">
+                        <a href="#catalogue" class="nav__link active-link">
                             <i class='bx bx-grid-alt nav__icon'></i>
                             <span class="nav__name">Catalogue</span>
                         </a>
                     </li>
                     
-                    
+                    <li class="nav__item">
+                        <a href="#caroussel" class="nav__link">
+                            <i class='bx bx-reflect-vertical nav__icon'></i>
+                            <span class="nav__name">Caroussel</span>
+                        </a>
+                    </li>
 
                     <li class="nav__item">
                         <a href="#reservations" class="nav__link">
@@ -294,14 +292,14 @@
 
     <main>
         <!--=============== CATALOGUE ===============-->
-        <section class="ftco-section" id="caroussel" style="padding: 0;">
+        <section class="ftco-section" id="catalogue" style="padding: 0;">
             <!-- gallery -->
             <div class="gallery">
                 <!-- list Items -->
                 <div class="list">
                     <div class="arrows">
-                        <button id="prev"><i class="bx bx-chevron-left"></i></button>
-                        <button id="next"><i class="bx bx-chevron-right"></i></button>
+                        <button id="prev"><</button>
+                        <button id="next">></button>
                     </div>
                     <div class="item active">
                         <img src="../img/bg-img/image_1.webp">
@@ -321,9 +319,9 @@
                 </div>
                 <!-- thumbnail -->
                 <div class="thumbnail">
-                    <div class="this_div" style ="background-color: red;height: 100%; with: 100%;">
+                    <div class="this_div">
                         <center id="center">
-                            <button type="button" id="openModal" style="border-radius: 50%;border: 0px;">
+                            <button type="button" id="openModal" style="background-color: red;border-radius: 50%;border: 0px;padding: 10px;">
                                 <i class="bx bx-plus" style="color: white;font-size: 40px;"></i>
                             </button>
                         </center>
@@ -345,17 +343,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-        <section>
-           <div style="overflow-c: auto;">
-            <table>
-                <tr>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                    <th>Email</th>
-                </tr>
-            </table>
         </section>
 
         <!--=============== CAROUSSEL ===============-->
