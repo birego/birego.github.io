@@ -179,10 +179,11 @@
             inset: auto 10px 10px 10px;
         }
         #center{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+            position : absolute;
+            margin:0;
+            top:50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
         }
         .modal {
             display: none;
