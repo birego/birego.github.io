@@ -40,7 +40,9 @@
                                                 <h5>Découvertes des cultures</h5>
                                                 <span>Programmez des voyages dans cette section afin de maximiser la visibilité ainsi que les réservations</span>
                                                 <div class="card-header-right">
-                                                    <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Programmer un voyage</button>
+                                                    <a href="add-culture">
+                                                        <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Programmer un voyage</button>
+                                                    </a>
                                                 </div>
                                                 
                                             </div>

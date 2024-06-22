@@ -1,6 +1,41 @@
 <?php
     include_once "inc/nav.php"; 
+    include_once "inc/db.php";
+
+    // Fonction pour récupérer les images par catégorie
+    function getImagesByCategory($conn, $category) {
+        $stmt = $conn->prepare("SELECT image FROM gallery WHERE category = ?");
+        $stmt->bind_param("s", $category);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $images = [];
+        while ($row = $result->fetch_assoc()) {
+            $images[] = $row['image'];
+        }
+        $stmt->close();
+        return $images;
+    }
+
+    // Récupération des images pour chaque catégorie
+    $natureImages = getImagesByCategory($conn, 'nature');
+    $humanitaireImages = getImagesByCategory($conn, 'humanitaire');
+    $voyageImages = getImagesByCategory($conn, 'voyage');
+    $cultureImages = getImagesByCategory($conn, 'culture');
+    $videoImages = getImagesByCategory($conn, 'videos');
 ?>
+<style type="text/css">
+    .video-container {
+            position: relative;
+            width: 215px;
+            height: 120px;
+        }
+        .video-placeholder {
+           
+        }
+        .video-iframe {
+            
+        }
+</style>
 
 
                     <div class="pcoded-content">
@@ -40,7 +75,9 @@
                                                 <h5>Galerie</h5>
                                                
                                                 <div class="card-header-right">
-                                                    <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Remplir la galerie</button>
+                                                    <a href="add-gallery">
+                                                        <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Remplir la galerie</button>
+                                                    </a>
                                                 </div>
                                                 
                                             </div>
@@ -87,209 +124,188 @@
                                                                 <!-- Tab panes -->
                                                                 <div class="tab-content tabs card-block">
                                                                     <div class="tab-pane active" id="home1" role="tabpanel">
-                                                                        <p class="m-0">1. This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-                                                                            bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                                                                            mas Cum sociis natoque penatibus et magnis dis.....</p>
-                                                                            <div class="row mt-2 px-2 py-2">
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_1.webp" style="width: 100%;">
+                                                                        <div class="row mt-2 px-2 py-2">
+                                                                        <?php
+                                                                        // Requête SQL pour sélectionner les données de la table gallery
+
+                                                                        function supprimer_chaine($text, $substring) {
+    // Utiliser str_replace pour remplacer toutes les occurrences de la chaîne par une chaîne vide
+    $modified_text = str_replace($substring, '', $text);
+    return $modified_text;
+}
+
+$chaine_a_supprimer = "../../";
+                                                                        $categ="nature";
+$sql = "SELECT * FROM gallery where category='$categ'";
+$result = $conn->query($sql);
+
+// Vérifier s'il y a des résultats
+if ($result->num_rows > 0) {
+    // Afficher les données dans un tableau HTML
+    while($row = $result->fetch_assoc()) {
+    ?>
+    <div class="col-md-3 col-lg-3 image-checkbox-container">
+                                                                                    <img src="<?php echo "../".supprimer_chaine($row['image'], $chaine_a_supprimer); ?>" style="width: 100%;">
                                                                                     <div class="image-checkbox">
                                                                                         <input type="checkbox">
                                                                                     </div>
                                                                                 </div>
+    
+    <?php
 
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_2.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
+    }
+} else {
+    echo "Aucune image";
+}
 
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_3.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_3.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_4.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_5.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_6.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_7.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+?> 
+                                                                            
 
 
                                                                             
                                                                     </div>
+                                                                </div>
+
+
                                                                     <div class="tab-pane" id="profile1" role="tabpanel">
-                                                                        <p class="m-0">2.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
-                                                                            felis amet.</p>
+                                                                        <div class="row mt-2 px-2 py-2">
+                                                                        <?php
+                                                                        // Requête SQL pour sélectionner les données de la table gallery
 
-                                                                            <div class="row mt-2 px-2 py-2">
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_8.webp" style="width: 100%;">
+                                                                        
+
+                                                                        $categ_h="humanitaire";
+$sql_h = "SELECT * FROM gallery where category='$categ_h'";
+$result_h = $conn->query($sql_h);
+
+// Vérifier s'il y a des résultats
+if ($result_h->num_rows > 0) {
+    // Afficher les données dans un tableau HTML
+    while($row_h = $result_h->fetch_assoc()) {
+    ?>
+    <div class="col-md-3 col-lg-3 image-checkbox-container">
+                                                                                    <img src="<?php echo "../".supprimer_chaine($row_h['image'], $chaine_a_supprimer); ?>" style="width: 100%;">
                                                                                     <div class="image-checkbox">
                                                                                         <input type="checkbox">
                                                                                     </div>
                                                                                 </div>
+    
+    <?php
 
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_9.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
+    }
+} else {
+    echo "Aucune image";
+}
 
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_10.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_11.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_12.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_13.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_14.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_15.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
+?> 
+</div>
                                                                     </div>
                                                                     <div class="tab-pane" id="messages1" role="tabpanel">
-                                                                        <p class="m-0">3. This is Photoshop's version of Lorem IpThis is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-                                                                            bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                                                                            mas Cum sociis natoque penatibus et magnis dis.....</p>
+                                                                        <div class="row mt-2 px-2 py-2">
+                                                                         <?php
+                                                                        // Requête SQL pour sélectionner les données de la table gallery
+
+                                                                        
+
+                                                                        $categ_v="voyage";
+$sql_v = "SELECT * FROM gallery where category='$categ_v'";
+$result_v = $conn->query($sql_v);
+
+// Vérifier s'il y a des résultats
+if ($result_v->num_rows > 0) {
+    // Afficher les données dans un tableau HTML
+    while($row_v = $result_v->fetch_assoc()) {
+    ?>
+    <div class="col-md-3 col-lg-3 image-checkbox-container">
+                                                                                    <img src="<?php echo "../".supprimer_chaine($row_v['image'], $chaine_a_supprimer); ?>" style="width: 100%;">
+                                                                                    <div class="image-checkbox">
+                                                                                        <input type="checkbox">
+                                                                                    </div>
+                                                                                </div>
+    
+    <?php
+
+    }
+} else {
+    echo "Aucune image";
+}
+
+?> 
+</div>
                                                                     </div>
                                                                     <div class="tab-pane" id="settings1" role="tabpanel">
-                                                                        <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
-                                                                            felis amet.</p>
+                                                                        <div class="row mt-2 px-2 py-2">
+                                                                         <?php
+                                                                        // Requête SQL pour sélectionner les données de la table gallery
+
+                                                                        
+
+                                                                        $categ_c="culture";
+$sql_c = "SELECT * FROM gallery where category='$categ_c'";
+$result_c = $conn->query($sql_c);
+
+// Vérifier s'il y a des résultats
+if ($result_c->num_rows > 0) {
+    // Afficher les données dans un tableau HTML
+    while($row_c = $result_c->fetch_assoc()) {
+    ?>
+    <div class="col-md-3 col-lg-3 image-checkbox-container">
+                                                                                    <img src="<?php echo "../".supprimer_chaine($row_c['image'], $chaine_a_supprimer); ?>" style="width: 100%;">
+                                                                                    <div class="image-checkbox">
+                                                                                        <input type="checkbox">
+                                                                                    </div>
+                                                                                </div>
+    
+    <?php
+
+    }
+} else {
+    echo "Aucune image";
+}
+
+?> 
+</div>
                                                                     </div>
 
 
                                                                     <div class="tab-pane" id="videos" role="tabpanel">
-                                                                        <p class="m-0">5.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
-                                                                            felis amet.</p>
-
                                                                         <div class="row mt-2 px-2 py-2">
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_8.webp" style="width: 100%;">
+                                                                         <?php
+                                                                        // Requête SQL pour sélectionner les données de la table gallery
+
+                                                                        
+
+                                                                        $categ_vid="videos";
+$sql_vid = "SELECT * FROM gallery where category='$categ_vid'";
+$result_vid = $conn->query($sql_vid);
+
+// Vérifier s'il y a des résultats
+if ($result_vid->num_rows > 0) {
+    // Afficher les données dans un tableau HTML
+    while($row_vid = $result_vid->fetch_assoc()) {
+    ?>
+    <div class="col-md-3 col-lg-3 image-checkbox-container">
+                                                                                   
+                       
+                       <div class="video-container">
+        <div class="video-placeholder" id="video-placeholder" style=" width: 100%;height: 100%;background: url('<?php echo "../".supprimer_chaine($row_vid['image'], $chaine_a_supprimer); ?>') center center / cover no-repeat;
+            cursor: pointer;"></div>
+        <iframe class="video-iframe" id="video-iframe" src="" allow="autoplay; encrypted-media" style="display: none;width: 100%;height: 100%;border: none;" allowfullscreen></iframe>
+    </div>
                                                                                     <div class="image-checkbox">
                                                                                         <input type="checkbox">
                                                                                     </div>
                                                                                 </div>
+    
+    <?php
 
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_9.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
+    }
+} else {
+    echo "Aucune vidéo";
+}
 
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_10.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_11.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_12.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_13.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_14.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <div class="col-md-3 col-lg-3 image-checkbox-container">
-                                                                                    <img src="../img/bg-img/image_15.webp" style="width: 100%;">
-                                                                                    <div class="image-checkbox">
-                                                                                        <input type="checkbox">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-
-
+?> 
+</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -331,7 +347,15 @@
         </div>
     </div>
 
-    <!-- Required Jquery -->
+    <!-- Required Js -->
+    <script>
+        document.getElementById('video-placeholder').addEventListener('click', function() {
+            var iframe = document.getElementById('video-iframe');
+            iframe.src = "https://www.youtube.com/embed/ID_VIDEO?autoplay=1";
+            iframe.style.display = 'block';
+            this.style.display = 'none';
+        });
+    </script>
     <script type="text/javascript" src="assets/js/jquery/jquery.min.js "></script>
     <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js "></script>
     <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>

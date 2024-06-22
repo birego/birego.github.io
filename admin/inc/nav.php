@@ -413,7 +413,7 @@ a, a:hover {
 
     .image-checkbox {
         position: absolute;
-        bottom: 10px;
+        top: 10px;
         left: 10px;
     }
 
@@ -521,7 +521,7 @@ a, a:hover {
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="../img/bg-img/avatar.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">John Doe</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -531,7 +531,7 @@ a, a:hover {
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="../img/bg-img/avatar.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Joseph William</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -541,7 +541,7 @@ a, a:hover {
                                     </li>
                                     <li class="waves-effect waves-light">
                                         <div class="media">
-                                            <img class="d-flex align-self-center img-radius" src="assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                                            <img class="d-flex align-self-center img-radius" src="../img/bg-img/avatar.png" alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h5 class="notification-user">Sara Soudein</h5>
                                                 <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
@@ -553,7 +553,7 @@ a, a:hover {
                             </li>
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <img src="../img/bg-img/avatar.png" class="img-radius" alt="User-Profile-Image">
                                     <span>Admin Name</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
@@ -595,7 +595,7 @@ a, a:hover {
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <img class="img-80 img-radius" src="../img/bg-img/avatar.png" alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">Admin Name<i class="fa fa-caret-down"></i></span>
                                     </div>
@@ -605,7 +605,7 @@ a, a:hover {
                                         <li class="more-details">
                                             <a href="user-profile.html"><i class="ti-user"></i>Profil</a>
                                             <a href="#!"><i class="ti-settings"></i>Paramètres</a>
-                                            <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Déconnexion</a>
+                                            <a href="logout"><i class="ti-layout-sidebar-left"></i>Déconnexion</a>
                                         </li>
                                     </ul>
                                 </div>

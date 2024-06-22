@@ -10,8 +10,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Ajouter une découverte</h5>
-                                            <p class="m-b-0">Utilisez cette section pour visualiser les découvertes antérieures</p>
+                                            <h5 class="m-b-10">Ajouter une décuverte de culture</h5>
+                                            <p class="m-b-0">Utilisez cette section pour ajouter des voyage des découvertes des cultures</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -19,7 +19,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="home"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Ajouter une découverte</a>
+                                            <li class="breadcrumb-item"><a href="#!">Ajouter un voyage</a>
                                             </li>
                                             </li>
                                         </ul>
@@ -37,10 +37,10 @@
                                         <!-- Basic table card start -->
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Enregistrer une découverte</h5>
+                                                <h5>Enregistrer une aventure</h5>
                                                 <div class="card-header-right">
-                                                    <a href="next-discoveries">
-                                                        <button type="button" class="btn btn-primary"> prochaines découvertes <i class="fas fa-arrow-right text-white"></i></button>
+                                                    <a href="next-adventures">
+                                                        <button type="button" class="btn btn-primary"> Découvertes des cultures <i class="fas fa-arrow-right text-white"></i></button>
                                                     </a>
                                                 </div>
 
@@ -55,7 +55,7 @@
                                                     <form method="post" enctype="multipart/form-data" action="backend/add-discoveries">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
-                                    <label for="inputEmail4">Titre de la découverte</label>
+                                    <label for="inputEmail4">Titre de la la découverte culturelle</label>
                                     <input type="text" class="form-control" id="inputEmail4" placeholder="Entrer l'intitulé de la découverte" name="title" required>
                                 </div>
 
@@ -91,7 +91,7 @@
                                 </div>
 
                                 <div class="form-group col-md-12">
-                                    <label for="exampleFormControlTextarea1">Détails de la découverte</label>
+                                    <label for="exampleFormControlTextarea1">Détails de l'aventure</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="details" placeholder="Entrer les détails..." required></textarea>
                                 </div>
 

@@ -40,7 +40,7 @@
                                                 <h5>Découvertes récentes</h5>
                                                 <span>Programmez des découvertes dans cette section afin de maximiser la visibilité ainsi que les réservations</span>
                                                 <div class="card-header-right">
-                                                    <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Nouvelle découverte</button>
+                                                    
                                                 </div>
                                                 
                                             </div>

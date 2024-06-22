@@ -10,8 +10,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Découvertes récentes</h5>
-                                            <p class="m-b-0">Utilisez cette section pour visualiser les découvertes antérieures</p>
+                                            <h5 class="m-b-10">Aventures récentes</h5>
+                                            <p class="m-b-0">Utilisez cette section pour visualiser les aventures antérieures</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -19,7 +19,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="home"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Découvertes</a>
+                                            <li class="breadcrumb-item"><a href="#!">Aventures</a>
                                             </li>
                                             </li>
                                         </ul>
@@ -37,10 +37,12 @@
                                         <!-- Basic table card start -->
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Découvertes récentes</h5>
-                                                <span>Programmez des découvertes dans cette section afin de maximiser la visibilité ainsi que les réservations</span>
+                                                <h5>Aventures récentes</h5>
+                                                <span>Programmez des aventures dans cette section afin de maximiser la visibilité ainsi que les réservations</span>
                                                 <div class="card-header-right">
-                                                    <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Nouvelle découverte</button>
+                                                    <a href="add-adventure">
+                                                        <button class="btn btn-primary"><i class="fas fa-plus text-white"></i> Nouvelle aventure</button>
+                                                    </a>
                                                 </div>
                                                 
                                             </div>

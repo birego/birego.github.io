@@ -10,8 +10,8 @@
                                 <div class="row align-items-center">
                                     <div class="col-md-8">
                                         <div class="page-header-title">
-                                            <h5 class="m-b-10">Ajouter une découverte</h5>
-                                            <p class="m-b-0">Utilisez cette section pour visualiser les découvertes antérieures</p>
+                                            <h5 class="m-b-10">Galerie</h5>
+                                            <p class="m-b-0">Partagez vos souvenir et vos réalisations</p>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -19,7 +19,7 @@
                                             <li class="breadcrumb-item">
                                                 <a href="home"> <i class="fa fa-home"></i> </a>
                                             </li>
-                                            <li class="breadcrumb-item"><a href="#!">Ajouter une découverte</a>
+                                            <li class="breadcrumb-item"><a href="#!">Remplir la galerie</a>
                                             </li>
                                             </li>
                                         </ul>
@@ -37,10 +37,10 @@
                                         <!-- Basic table card start -->
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5>Enregistrer une découverte</h5>
+                                                <h5>Remplir la galerie</h5>
                                                 <div class="card-header-right">
-                                                    <a href="next-discoveries">
-                                                        <button type="button" class="btn btn-primary"> prochaines découvertes <i class="fas fa-arrow-right text-white"></i></button>
+                                                    <a href="gallery">
+                                                        <button type="button" class="btn btn-primary"> Catalogue d'images et des videos <i class="fas fa-arrow-right text-white"></i></button>
                                                     </a>
                                                 </div>
 
@@ -52,57 +52,32 @@
                                                     
                                                 <div class="col-lg-12">
                                                 <div class="">
-                                                    <form method="post" enctype="multipart/form-data" action="backend/add-discoveries">
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <label for="inputEmail4">Titre de la découverte</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Entrer l'intitulé de la découverte" name="title" required>
-                                </div>
+                                                    <form method="post" enctype="multipart/form-data" action="backend/add-gallery.php">
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="category">Choisir une catégorie pour les images</label>
+                    <select class="form-control" name="category">
+                        <option value="nature">Nature</option>
+                        <option value="humanitaire">Humanitaire</option>
+                        <option value="culture">Culture</option>
+                        <option value="voyage">Voyage</option>
+                        <option value="videos">Vidéos</option>
+                    </select>
+                </div>
 
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Lieu</label>
-                                    <input type="text" class="form-control" id="inputEmail4" placeholder="Entrer le lieu de la découverte" name="place" required>
-                                </div>
+                <div class="form-group col-md-12">
+                    <label for="images">Charges les images</label>
+                    <input type="file" class="form-control" id="images" name="images[]" multiple required>
+                </div>
 
-                                <div class="form-group col-md-2">
-                                    <label for="inputEmail4">Image 1</label>
-                                    <input type="file" class="form-control" id="inputEmail4" name="image_1" required>
-                                </div>
+                <div class="form-group col-md-12">
+                    <label for="link">Lien instagram</label>
+                    <input type="text" class="form-control" id="link" name="link" value="https://www.instagram.com/davimage7/">
+                </div>
+            </div>
 
-                                <div class="form-group col-md-2">
-                                    <label for="inputEmail4">Image 2</label>
-                                    <input type="file" class="form-control" id="inputEmail4" name="image_2" required>
-                                </div>
-
-                                <div class="form-group col-md-2">
-                                    <label for="inputEmail4">Image 3</label>
-                                    <input type="file" class="form-control" id="inputEmail4" name="image_3" required>
-                                </div>
-
-
-                                <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Date de debut</label>
-                                    <input type="date" class="form-control" id="inputEmail4" name="start_date" required>
-                                </div>
-
-                                <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Date de fin</label>
-                                    <input type="date" class="form-control" id="inputPassword4" name="end_date" required>
-                                </div>
-
-                                <div class="form-group col-md-12">
-                                    <label for="exampleFormControlTextarea1">Détails de la découverte</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="details" placeholder="Entrer les détails..." required></textarea>
-                                </div>
-
-                                
-                            </div>
-                            
-                           
-                            
-                            
-                            <button type="submit" class="btn  btn-primary" name="save">Enregistrer</button>
-                        </form>
+            <button type="submit" class="btn btn-primary" name="save">Enregistrer</button>
+        </form>
                                                 </div>
                                                     
 
