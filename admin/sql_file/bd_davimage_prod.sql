@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : dim. 23 juin 2024 à 00:12
+-- Généré le : lun. 24 juin 2024 à 09:40
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -93,6 +93,14 @@ CREATE TABLE `discoveries` (
   `image_3` varchar(255) NOT NULL,
   `status` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `discoveries`
+--
+
+INSERT INTO `discoveries` (`id`, `title`, `details`, `place`, `start_date`, `end_date`, `image_1`, `image_2`, `image_3`, `status`) VALUES
+(1, 'Mémorial génocides de Kigali', 'Visite éducative pour comprendre l\'histoire récente et rendre hommage aux victimes.', 'Rwanda', '2024-07-10', '2024-07-12', '../../img/bg-img/Kigali Genocide Memorial Amphitheatre designed by Selim Senin.webp', '../../img/bg-img/KIGALI GENOCIDE MEMORIAL.webp', '../../img/bg-img/Kigali Genocide Memorial (1).webp', 0),
+(2, 'Musée vivant de Bujumbura', 'Découverte de la faune locale, des pratiques culturelles et des artefacts historiques.', 'Burundi', '2024-07-31', '2024-08-03', '../../img/bg-img/Bujumbura _ national capital, Burundi.webp', '../../img/bg-img/Monkey - Burundi, Central Africa  March 2014.webp', '../../img/bg-img/Central African Republic – Caravanserai 230.webp', 0);
 
 -- --------------------------------------------------------
 
@@ -302,7 +310,7 @@ ALTER TABLE `cultures`
 -- AUTO_INCREMENT pour la table `discoveries`
 --
 ALTER TABLE `discoveries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `gallery`
